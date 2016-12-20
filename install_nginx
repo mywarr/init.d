@@ -5,3 +5,8 @@ deb-src http://nginx.org/packages/ubuntu/ $(lsb_release -cs) nginx" > /etc/apt/s
 sudo apt-get update
 sudo apt-get install -y nginx
 nginx -v
+
+sudo mv /etc/nginx /etc/nginx-prev
+sudo mkdir /etc/nginx
+cd /etc/
+sudo -E -s git clone git@github.com:mywarr/server-configs-nginx.git nginx
